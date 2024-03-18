@@ -1,0 +1,40 @@
+@import '@assets/styles/global';
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 240px;
+  border-bottom: 1px solid $borderLight;
+
+  a {
+    text-decoration: none;
+  }
+
+  .navigate_container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .link {
+      color: $textSecondary;
+      font-size: $fontSize;
+      font-style: normal;
+      font-weight: $mediumWeight;
+      line-height: 24px;
+    }
+  }
+
+  .logout_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    .logout {
+      font-size: $fontSize;
+      color: $textSecondary;
+      font-style: normal;
+      font-weight: $mediumWeight;
+      line-height: 24px;
+    }
+  }
+}

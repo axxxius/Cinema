@@ -1,0 +1,57 @@
+@import "@assets/styles/global";
+
+.card_container {
+  width: 250px;
+
+  .film_preview {
+    width: 250px;
+    height: 300px;
+    align-self: stretch;
+    border-radius: 8px;
+  }
+
+  .container {
+    padding: 16px 0;
+    word-wrap: break-word;
+    height: 105px;
+
+    .name {
+      color: $textPrimary;
+      font-size: 20px;
+      font-weight: $boldWeight;
+      line-height: 24px;
+    }
+
+    .original_name {
+      color: $textTertiary;
+      font-size: $fontSize2;
+      font-weight: $regularWeight;
+      line-height: 20px;
+    }
+  }
+
+  .kinopoisk {
+    color: $textTertiary;
+    font-size: $fontSize2;
+    font-weight: $regularWeight;
+    line-height: 20px;
+    padding-bottom: 16px;
+  };
+
+  .more_details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    gap: 8px;
+
+    border-radius: 10px;
+    background: $primaryColor;
+
+    text-decoration: none;
+    color: $background;
+    font-size: $fontSize;
+    font-weight: $boldWeight;
+    line-height: 24px;
+  }
+}

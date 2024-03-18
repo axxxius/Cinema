@@ -1,0 +1,16 @@
+@import "@assets/styles/global";
+
+.poster_container {
+  margin-top: 48px;
+  display: flex;
+  padding: 0 240px;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    color: $textPrimary;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+}

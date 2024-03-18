@@ -1,0 +1,24 @@
+@import "@assets/styles/global";
+
+.container {
+  display: flex;
+  gap: 32px;
+
+  .film_image {
+    width: 250px;
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  .details_info_container {
+    h1 {
+      font-size: $fontSize32;
+      font-weight: $boldWeight;
+      line-height: 36px;
+    }
+  }
+
+  .description {
+    width: 613px;
+  }
+}

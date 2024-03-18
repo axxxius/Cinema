@@ -1,0 +1,13 @@
+@import "@assets/styles/global";
+
+.container {
+  padding: 0 240px;
+
+  .navigate {
+    display: flex;
+    gap: 16px;
+    padding: 24px 0;
+    color: $textTertiary;
+    text-decoration: none;
+  }
+}
