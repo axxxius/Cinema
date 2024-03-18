@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import arrowLeft from '@assets/images/icons/arrowLeft.svg';
+import arrowLeft from '@assets/icons/arrowLeft.svg';
 import { Loader } from '@components';
 import { useRequestFilmByIdQuery } from '@utils';
 

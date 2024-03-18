@@ -1,11 +1,11 @@
-import { useRequestScheduleByFilmId } from '@utils';
+import { useRequestScheduleByFilmIdQuery } from '@utils';
 
 interface ScheduleCurrentFilmProps {
   id: string;
 }
 
 export const ScheduleCurrentFilm = ({ id }: ScheduleCurrentFilmProps) => {
-  const { data } = useRequestScheduleByFilmId(id);
+  const { data } = useRequestScheduleByFilmIdQuery(id);
 
   return (
     <div>

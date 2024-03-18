@@ -1,3 +1,3 @@
-export * from './useRequestFilmQueryById';
-export * from './useRequestScheduleByFilmId';
+export * from './useRequestFilmByIdQuery.ts';
+export * from './useRequestScheduleByFilmIdQuery.ts';
 export * from './useRequestTodayPoster';

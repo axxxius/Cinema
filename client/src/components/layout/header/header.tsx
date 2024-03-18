@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import exit from '@assets/images/icons/exit.svg';
+import exit from '@assets/icons/exit.svg';
 
 import cl from './header.module.scss';
 
