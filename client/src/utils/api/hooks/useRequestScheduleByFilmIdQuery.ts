@@ -1,9 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { requestSchedule } from '@utils';
 
-export const useRequestScheduleByFilmIdQuery = (id: string) => {
+interface UseRequestScheduleByFilmIdQueryParams {
+  id: string | undefined;
+}
+
+export const useRequestScheduleByFilmIdQuery = (
+  params: RequestParams<UseRequestScheduleByFilmIdQueryParams>,
+  settings?: RequestQuerySettings<typeof requestSchedule>
+) => {
   return useQuery({
-    queryKey: ['schedule', id],
-    queryFn: () => requestSchedule(id)
+    queryKey: ['schedule', params.id],
+    queryFn: () => requestSchedule({ params, config: settings?.config }),
+    ...settings?.options
   });
 };

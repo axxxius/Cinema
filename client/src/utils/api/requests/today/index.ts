@@ -1,11 +1,9 @@
 import { api } from '@utils';
 
-interface ResponseTodayPoster {
+interface TodayPosterResponse {
   success: boolean;
   films: api.Film[];
 }
 
-export const requestTodayPoster = async () => {
-  const { data } = await api.get<ResponseTodayPoster>('/cinema/today');
-  return data.films;
-};
+export const requestTodayPoster = async ({ config }: AxiosRequestConfig) =>
+  await api.get<TodayPosterResponse>('/cinema/today', config);

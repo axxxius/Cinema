@@ -1,11 +1,15 @@
 import { api } from '@utils';
 
-interface ScheduleByFilmId {
+interface RequestScheduleParams {
+  id: string | undefined;
+}
+
+type ScheduleConfig = AxiosRequestConfig<RequestScheduleParams>;
+
+interface ScheduleByFilmIdResponse {
   success: boolean;
   schedules: api.Schedule[];
 }
 
-export const requestSchedule = async (id: string) => {
-  const { data } = await api.get<ScheduleByFilmId>(`/cinema/film/${id}/schedule`);
-  return data;
-};
+export const requestSchedule = async ({ params, config }: ScheduleConfig) =>
+  await api.get<ScheduleByFilmIdResponse>(`/cinema/film/${params.id}/schedule`, config);

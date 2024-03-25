@@ -1,9 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchFilm } from '@utils';
 
-export const useRequestFilmByIdQuery = (id: string) => {
+interface UseRequestFilmByIdQuery {
+  id: string | undefined;
+}
+
+export const useRequestFilmByIdQuery = (
+  params: RequestParams<UseRequestFilmByIdQuery>,
+  settings?: RequestQuerySettings<typeof fetchFilm>
+) => {
   return useQuery({
-    queryKey: ['film', id],
-    queryFn: () => fetchFilm(id)
+    queryKey: ['film', params.id],
+    queryFn: () => fetchFilm({ params, config: settings?.config }),
+    ...settings?.options
   });
 };

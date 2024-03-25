@@ -12,7 +12,7 @@ export const Poster = () => {
   return (
     <div className={cl.poster_container}>
       <h1 className={cl.title}>Афиша</h1>
-      <FilmList films={films} />
+      <FilmList films={films?.data.films} />
     </div>
   );
 };

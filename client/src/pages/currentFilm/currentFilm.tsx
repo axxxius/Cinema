@@ -12,7 +12,7 @@ import cl from './currentFilm.module.scss';
 export const CurrentFilm = () => {
   const { id } = useParams();
 
-  const { data: film, isLoading } = useRequestFilmByIdQuery(id!);
+  const { data: film, isLoading } = useRequestFilmByIdQuery({ id });
 
   if (isLoading) return <Loader />;
 
@@ -23,7 +23,7 @@ export const CurrentFilm = () => {
         Назад
       </Link>
 
-      <CurrentFilmDetails film={film} />
+      <CurrentFilmDetails film={film?.data?.film} />
       <ScheduleCurrentFilm id={id!} />
     </div>
   );

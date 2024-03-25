@@ -1,11 +1,15 @@
 import { api } from '@utils';
 
-interface FilmById {
+interface FetchFilmParams {
+  id: string | undefined;
+}
+
+type FilmConfig = AxiosRequestConfig<FetchFilmParams>;
+
+interface FilmByIdResponse {
   success: boolean;
   film: api.Film;
 }
 
-export const fetchFilm = async (id: string) => {
-  const { data } = await api.get<FilmById>(`/cinema/film/${id}`);
-  return data.film;
-};
+export const fetchFilm = async ({ params, config }: FilmConfig) =>
+  await api.get<FilmByIdResponse>(`/cinema/film/${params.id}`, config);

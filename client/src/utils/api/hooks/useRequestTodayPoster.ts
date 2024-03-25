@@ -1,9 +1,12 @@
+import { requestTodayPoster } from '../requests';
 import { useQuery } from '@tanstack/react-query';
-import { requestTodayPoster } from '@utils';
 
-export const useRequestTodayPosterQuery = () => {
+export const useRequestTodayPosterQuery = (
+  settings?: RequestQuerySettings<typeof requestTodayPoster>
+) => {
   return useQuery({
     queryKey: ['today'],
-    queryFn: () => requestTodayPoster()
+    queryFn: () => requestTodayPoster({ config: settings?.config }),
+    ...settings?.options
   });
 };
