@@ -1,8 +1,10 @@
-import { Loader } from '@components';
 import { useRequestTodayPosterQuery } from '@utils';
 
-import cl from './poster.module.scss';
+import { Loader, Typography } from '@common';
+
 import { FilmList } from './components';
+
+import cl from './poster.module.scss';
 
 export const Poster = () => {
   const { data: films, isLoading } = useRequestTodayPosterQuery();
@@ -11,7 +13,9 @@ export const Poster = () => {
 
   return (
     <div className={cl.poster_container}>
-      <h1 className={cl.title}>Афиша</h1>
+      <Typography tag='h1' variant='title' className={cl.title}>
+        Афиша
+      </Typography>
       <FilmList films={films?.data.films} />
     </div>
   );

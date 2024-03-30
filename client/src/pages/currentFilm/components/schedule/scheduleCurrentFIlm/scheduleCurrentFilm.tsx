@@ -1,6 +1,12 @@
-import { groupByHall, useRequestScheduleByFilmIdQuery } from '@utils';
-import { HallTime, ScheduleState } from '../hallTime/hallTime.tsx';
 import { useParams } from 'react-router';
+
+import { groupByHall, useRequestScheduleByFilmIdQuery } from '@utils';
+
+import { Typography } from '@common';
+import { HallTime, ScheduleState } from '../hallTime/hallTime.tsx';
+import { Tab } from '../tab/tab.tsx';
+
+import cl from './scheduleCurrentFilm.module.scss';
 
 interface ScheduleCurrentFilmProps {
   schedule: ScheduleState;
@@ -17,27 +23,34 @@ export const ScheduleCurrentFilm = ({
 
   const { data } = useRequestScheduleByFilmIdQuery({ id });
 
-  const findSchedule =
-    data?.data.schedules.find((currentSchedule) => currentSchedule.date === schedule.date)
-      ?.seances ?? undefined;
+  const findSchedule = data?.data.schedules.find(
+    (currentSchedule) => currentSchedule.date === schedule.date
+  )?.seances;
 
   const groupedSeances = findSchedule ? groupByHall(findSchedule) : undefined;
 
   return (
     <div>
-      {data?.data.schedules.map((schedule) => (
-        <div
-          style={{ border: '1px solid red', color: 'black' }}
-          key={schedule.date}
-          onClick={() => onClickDate(schedule.date)}
-        >
-          {schedule.date}
-        </div>
-      ))}
-      {groupedSeances &&
-        groupedSeances.map((hall) => (
-          <HallTime key={hall.name} hall={hall} schedule={schedule} onClickTime={onClickTime} />
+      <Typography tag='h1' variant='title'>
+        Расписание
+      </Typography>
+      <div className={cl.tabs}>
+        {data?.data.schedules.map((currentSchedule) => (
+          <Tab
+            key={currentSchedule.date}
+            active={currentSchedule.date === schedule.date}
+            onClick={() => onClickDate(currentSchedule.date)}
+          >
+            {currentSchedule.date}
+          </Tab>
         ))}
+      </div>
+      <div>
+        {groupedSeances &&
+          groupedSeances.map((hall) => (
+            <HallTime key={hall.name} hall={hall} schedule={schedule} onClickTime={onClickTime} />
+          ))}
+      </div>
     </div>
   );
 };

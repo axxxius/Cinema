@@ -1,2 +1,2 @@
-export * from './filmList/filmList';
 export * from './filmCard/filmCard';
+export * from './filmList/filmList';

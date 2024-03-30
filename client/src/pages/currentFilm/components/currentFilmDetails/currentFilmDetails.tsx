@@ -1,4 +1,4 @@
-import { StarsRating } from '@components';
+import { StarsRating, Typography } from '@common';
 
 import cl from './currentFilmDetails.module.scss';
 
@@ -17,7 +17,7 @@ export const CurrentFilmDetails = ({ film }: CurrentFilmDetailsProps) => {
             alt='film'
           />
           <div className={cl.details_info_container}>
-            <h1>{film.name}</h1>
+            <Typography tag='h1'>{film.name}</Typography>
             <p>{film.originalName}</p>
             <StarsRating rating={film.userRatings.kinopoisk} />
             <p>kinopoisk: {film.userRatings.kinopoisk}</p>

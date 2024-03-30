@@ -2,13 +2,12 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import arrowLeft from '@assets/icons/arrowLeft.svg';
-import { Loader } from '@components';
-import { useRequestFilmByIdQuery, useRequestScheduleByFilmIdQuery } from '@utils';
+import { Loader, Typography } from '@common';
+import { ROUTES, useRequestFilmByIdQuery, useRequestScheduleByFilmIdQuery } from '@utils';
 
-import { CurrentFilmDetails, ScheduleCurrentFilm } from './components';
+import { CurrentFilmDetails, ScheduleCurrentFilm, useSchedule } from './components';
 
 import cl from './currentFilm.module.scss';
-import { useSchedule } from './components/schedule/hooks/useSchedule.ts';
 
 export const CurrentFilm = () => {
   const { id } = useParams();
@@ -23,9 +22,11 @@ export const CurrentFilm = () => {
 
   return (
     <div className={cl.container}>
-      <Link to='/' className={cl.navigate}>
+      <Link to={ROUTES.MAIN} className={cl.navigate}>
         <img src={arrowLeft} alt='arrowLeft' />
-        Назад
+        <Typography variant='sub-body' tag='div'>
+          Назад
+        </Typography>
       </Link>
 
       <CurrentFilmDetails film={film?.data?.film} />
