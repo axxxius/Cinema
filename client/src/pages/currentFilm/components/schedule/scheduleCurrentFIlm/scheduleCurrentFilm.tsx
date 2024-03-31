@@ -31,7 +31,7 @@ export const ScheduleCurrentFilm = ({
 
   return (
     <div>
-      <Typography tag='h1' variant='title'>
+      <Typography className={cl.schedule_title} tag='h1' variant='title'>
         Расписание
       </Typography>
       <div className={cl.tabs}>
@@ -40,6 +40,7 @@ export const ScheduleCurrentFilm = ({
             key={currentSchedule.date}
             active={currentSchedule.date === schedule.date}
             onClick={() => onClickDate(currentSchedule.date)}
+            variant='date'
           >
             {currentSchedule.date}
           </Tab>

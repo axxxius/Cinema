@@ -8,10 +8,19 @@ interface TabProps {
   active: boolean;
   children: ReactNode;
   onClick: () => void;
+  className?: string;
+  variant?: 'date' | 'time';
 }
 
-export const Tab = ({ active, children, onClick }: TabProps) => {
-  const tabClasses = classnames(cl.tab, { [cl.tab_active]: active });
+export const Tab = ({ active, children, onClick, className, variant = 'date' }: TabProps) => {
+  const tabClasses = classnames(
+    cl.tab,
+    {
+      [cl.date_active]: active && variant === 'date',
+      [cl.time_active]: active && variant === 'time'
+    },
+    className
+  );
 
   return (
     <div className={tabClasses} onClick={onClick}>

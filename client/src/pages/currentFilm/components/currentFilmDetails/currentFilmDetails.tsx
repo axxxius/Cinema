@@ -18,10 +18,12 @@ export const CurrentFilmDetails = ({ film }: CurrentFilmDetailsProps) => {
           />
           <div className={cl.details_info_container}>
             <Typography tag='h1'>{film.name}</Typography>
-            <p>{film.originalName}</p>
+            <p className={cl.original_name}>{film.originalName}</p>
             <StarsRating rating={film.userRatings.kinopoisk} />
-            <p>kinopoisk: {film.userRatings.kinopoisk}</p>
-            <p className={cl.description}>{film.description}</p>
+            <p className={cl.rating}>kinopoisk: {film.userRatings.kinopoisk}</p>
+            <Typography variant='sub-body' className={cl.description}>
+              {film.description}
+            </Typography>
           </div>
         </div>
       )}

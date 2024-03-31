@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+
+  .hall_name {
+    color: rgb(52, 64, 81);
+    font-size: 12px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  border: 1px solid rgb(206, 210, 218);
+}
+
+.active {
+  background-color: rgb(151, 161, 175);
+}

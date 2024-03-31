@@ -1,4 +1,7 @@
-import { Tabs } from '../tabs/tabs.tsx';
+import { Tab } from '../tab/tab.tsx';
+import cl from './hallTime.module.scss';
+import { EnumHallName } from '@utils';
+import { Typography } from '@common';
 
 export interface GroupedHalls {
   name: api.HallName;
@@ -19,16 +22,28 @@ interface HallTimeProps {
 
 export const HallTime = ({ hall, schedule, onClickTime }: HallTimeProps) => {
   const timeClick = (time: string) => onClickTime(hall.name, time);
+
   return (
-    <div>
-      <Tabs>
-        {hall.times.map((time) => (
-          <div onClick={() => timeClick(time)} key={time}>
-            {time}
-          </div>
-        ))}
-        <div>{schedule.date}</div>
-      </Tabs>
+    <div className={cl.container}>
+      <div className={cl.con}>
+        <Typography tag='div' variant='title-regular' className={cl.hall_name}>
+          {EnumHallName[hall.name]}
+        </Typography>
+
+        <div className={cl.tabs}>
+          {hall.times.map((time) => (
+            <Tab
+              active={schedule.hall === hall.name && schedule.time === time}
+              onClick={() => timeClick(time)}
+              key={time}
+              className={cl.tab}
+              variant='time'
+            >
+              {time}
+            </Tab>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

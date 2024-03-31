@@ -51,5 +51,9 @@
     font-size: $fontSize;
     font-weight: $boldWeight;
     line-height: 24px;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

@@ -16,9 +16,25 @@
       font-weight: $boldWeight;
       line-height: 36px;
     }
+
+    .original_name {
+      color: rgb(99, 112, 131);
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+
+    .rating {
+      color: rgb(99, 112, 131);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
   }
 
   .description {
+    color: rgb(52, 64, 81);
     width: 613px;
   }
 }

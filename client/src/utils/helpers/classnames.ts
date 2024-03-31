@@ -2,7 +2,7 @@ interface ClassnamesObj {
   [k: string]: boolean;
 }
 
-type ClassnamesParams = Array<ClassnamesObj | string>;
+type ClassnamesParams = Array<ClassnamesObj | string | undefined>;
 
 export const classnames = (...args: ClassnamesParams) => {
   const classNames = [];
