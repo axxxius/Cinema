@@ -12,7 +12,13 @@ interface TabProps {
   variant?: 'date' | 'time';
 }
 
-export const Tab = ({ active, children, onClick, className, variant = 'date' }: TabProps) => {
+export const Tab = ({
+  active = false,
+  children,
+  onClick,
+  className,
+  variant = 'date'
+}: TabProps) => {
   const tabClasses = classnames(
     cl.tab,
     {

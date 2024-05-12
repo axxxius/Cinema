@@ -61,6 +61,17 @@ namespace api {
     type: SeancePlaceType;
   }
 
+  interface SelectSeat {
+    row: number | null;
+    column: number | null;
+  }
+
+  interface ChoosePlace {
+    price: number;
+    row: number;
+    column: number;
+  }
+
   interface FilmHall {
     name: HallName;
     places: FilmSeancePlace[][];

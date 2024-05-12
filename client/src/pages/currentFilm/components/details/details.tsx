@@ -1,12 +1,12 @@
 import { StarsRating, Typography } from '@common';
 
-import cl from './currentFilmDetails.module.scss';
+import cl from './details.module.scss';
 
 interface CurrentFilmDetailsProps {
   film: api.Film | undefined;
 }
 
-export const CurrentFilmDetails = ({ film }: CurrentFilmDetailsProps) => {
+export const Details = ({ film }: CurrentFilmDetailsProps) => {
   return (
     <>
       {film && (

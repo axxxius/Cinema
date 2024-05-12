@@ -1,2 +1,2 @@
-export * from './currentFilmDetails/currentFilmDetails';
+export * from './details/details.tsx';
 export * from './schedule';

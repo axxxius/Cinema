@@ -1,7 +1,9 @@
-import { Tab } from '../tab/tab.tsx';
-import cl from './hallTime.module.scss';
-import { EnumHallName } from '@utils';
 import { Typography } from '@common';
+import { EnumHallName } from '@utils';
+
+import { Tab } from '../tab/tab.tsx';
+
+import cl from './hallTime.module.scss';
 
 export interface GroupedHalls {
   name: api.HallName;

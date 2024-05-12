@@ -1,12 +1,12 @@
 import { useParams } from 'react-router';
 
+import { Typography } from '@common';
 import { groupByHall, useRequestScheduleByFilmIdQuery } from '@utils';
 
-import { Typography } from '@common';
 import { HallTime, ScheduleState } from '../hallTime/hallTime.tsx';
 import { Tab } from '../tab/tab.tsx';
 
-import cl from './scheduleCurrentFilm.module.scss';
+import cl from './scheduleFilm.module.scss';
 
 interface ScheduleCurrentFilmProps {
   schedule: ScheduleState;
@@ -14,11 +14,7 @@ interface ScheduleCurrentFilmProps {
   onClickTime: (hall: api.HallName, time: string) => void;
 }
 
-export const ScheduleCurrentFilm = ({
-  schedule,
-  onClickDate,
-  onClickTime
-}: ScheduleCurrentFilmProps) => {
+export const ScheduleFilm = ({ schedule, onClickDate, onClickTime }: ScheduleCurrentFilmProps) => {
   const { id } = useParams();
 
   const { data } = useRequestScheduleByFilmIdQuery({ id });

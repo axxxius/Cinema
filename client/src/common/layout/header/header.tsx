@@ -11,9 +11,6 @@ export const Header = () => (
         Главная
       </Link>
       <Link to='#' className={cl.link}>
-        Профиль
-      </Link>
-      <Link to='#' className={cl.link}>
         Билеты
       </Link>
     </div>
